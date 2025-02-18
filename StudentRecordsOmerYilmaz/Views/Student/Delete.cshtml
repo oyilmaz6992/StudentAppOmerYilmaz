@@ -1,0 +1,11 @@
+@model StudentRecordsOmerYilmaz.Models.Student
+
+<h2>Confirm Deletion</h2>
+
+<h4>@Model.FirstName @Model.LastName (Age: @Model.Age)</h4>
+
+<form asp-action="DeleteConfirmed" asp-controller="Student" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

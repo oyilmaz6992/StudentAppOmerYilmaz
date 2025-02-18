@@ -1,0 +1,42 @@
+@model StudentRecordsOmerYilmaz.Models.Student
+
+<h2>Edit Student</h2>
+
+<form asp-action="Edit" asp-controller="Student" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="FirstName">First name</label>
+        <input asp-for="FirstName" class="form-control" required />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LastName">Last name</label>
+        <input asp-for="LastName" class="form-control" required />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DateOfBirth">Date of birth</label>
+        <input asp-for="DateOfBirth" type="date" class="form-control" required />
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GPA">GPA</label>
+        <input asp-for="GPA" class="form-control" required />
+        <span asp-validation-for="GPA" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ProgramCode">Program</label>
+        <select asp-for="ProgramCode" asp-items="ViewBag.Programs" class="form-control" required>
+            <option value="">-- Select a Program --</option>
+        </select>
+        <span asp-validation-for="ProgramCode" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
